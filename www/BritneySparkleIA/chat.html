@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Britney Sparkle Chat</title>
+  <link rel="stylesheet" href="./style_chat.css">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h1>Chat with Britney Sparkle</h1>
+      <p>Ask me anything, and I'll respond with my iconic lyrics! ✨💖</p>
+    </div>
+    
+    <div class="chat-messages" id="chat-messages">
+      <div class="message bot-message">
+        Hey there! I'm Britney Sparkle. How can I make you happy today?
+      </div>
+    </div>
+    
+    <form id="chat-form" class="chat-form">
+      <input type="text" id="message-input" class="chat-input" placeholder="Type your message here..." required>
+      <button type="submit" class="chat-button">Send</button>
+    </form>
+    
+    <a href="/index.html" class="back-link">Back to Home</a>
+  </div>
+  
+  <script>
+    const britneyLyrics = [
+      "Hit me baby one more time!",
+      "Oops, I did it again to your heart.",
+      "You're toxic, I'm slipping under.",
+      "I'm not a girl, not yet a woman.",
+      "It's Britney!",
+      "I'm stronger than yesterday.",
+      "My loneliness is killing me (and I).",
+      "With a taste of your lips, I'm on a ride.",
+      "You better work!",
+      "I wanna go all the way, taking out my freak tonight.",
+      "All eyes on me in the center of the ring just like a circus.",
+      "Every time they turn the lights down, just wanna go that extra mile for you.",
+      "I cannot hold it, I cannot control it.",
+      "Don't you know that you're toxic?",
+      "Gimme gimme more, gimme more, gimme gimme more.",
+      "Baby, all I want is to let you know that I'm lucky to have you.",
+      "I'm crazy, but you like it.",
+      "My heart is beating so fast, I can't stop it.",
+      "I'm addicted to you, don't you know that you're toxic?",
+      "Sometimes I run, sometimes I hide, sometimes I'm scared of you."
+    ];
+
+    document.getElementById('chat-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const messageInput = document.getElementById('message-input');
+      const message = messageInput.value.trim();
+      
+      if (message) {
+        const chatMessages = document.getElementById('chat-messages');
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.className = 'message user-message';
+        userMessageDiv.textContent = message;
+        chatMessages.appendChild(userMessageDiv);
+        
+        messageInput.value = '';
+        
+        const randomIndex = Math.floor(Math.random() * britneyLyrics.length);
+        const britneyResponse = britneyLyrics[randomIndex];
+        
+        setTimeout(() => {
+          const botMessageDiv = document.createElement('div');
+          botMessageDiv.className = 'message bot-message';
+          botMessageDiv.textContent = britneyResponse;
+          chatMessages.appendChild(botMessageDiv);
+          
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 500);
+        
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    });
+  </script>
+</body>
+</html>
