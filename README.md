@@ -6,8 +6,6 @@ The web server can handle HTTP GET, POST and DELETE Requests, and can serve stat
 <br>
 
 ---
-<br>
-
 # Usage
 ```bash
 make
