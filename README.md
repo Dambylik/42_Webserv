@@ -1,4 +1,4 @@
-![ascii-text-art](https://github.com/Dambylik/42_Webserv/photos/webservm.png)](https://github.com/Dambylik/42_Webserv/blob/main/photos/webservm.png)
+![ascii-text-art](https://github.com/Dambylik/42_Webserv/blob/main/photos/webservm.png)
 
 ## Project Overview
 The goal of the project is to build a C++ 98 compatible HTTP web server from scratch.
